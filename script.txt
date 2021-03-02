@@ -1,0 +1,14 @@
+#Check file size using PowerShell Script in KB, MB or in GB:-
+
+$file = 'E:\File_Name'
+Write-Host((Get-Item $file).length/1KB)
+Write-Host((Get-Item $file).length/1MB)
+Write-Host((Get-Item $file).length/1GB)
+
+
+#To check the file size in Linux/Unix bash shell script
+
+du --apparent-size --block-size=1  "/path_by_user"
+fileName="/path_by_user"
+mfs=$(du --apparent-size --block-size=1  "$fileName" | awk '{ print $1}')
+echo "$fileName size = ${mfs}"
